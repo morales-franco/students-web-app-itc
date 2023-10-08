@@ -1,0 +1,35 @@
+﻿<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar sidebar-offcanvas">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="~/images/avatar.png" class="img-circle" alt="User Image" >
+            </div>
+            <div class="pull-left info">
+                <p>
+                    Tom Mobius
+                </p>
+            </div>
+        </div>
+
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li>
+                <a asp-controller="Home" asp-action="Index"><i class="ion ion-home"></i><span>Inicio</span></a>
+            </li>
+
+            <li class="treeview">
+                <a href="#"><i class="fa fa-table"></i><span>Escuela</span><i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a asp-controller="Students" asp-action="Index"><i class="fa fa-users"></i><span>Estudiantes</span></a>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

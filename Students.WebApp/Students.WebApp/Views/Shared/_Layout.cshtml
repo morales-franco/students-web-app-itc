@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Students.WebApp</title>
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/css/datatables/dataTables.bootstrap.css" />
+    <link rel="stylesheet" href="~/css/font-awesome.css" />
+    <link rel="stylesheet" href="~/css/ionicons.css" />
+    <link rel="stylesheet" href="~/css/AdminLTE/AdminLTE.css" />
+    <link rel="stylesheet" href="~/css/AdminLTE/skins/_all-skins.css" />
+    <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true" />
+
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+        }
+    </style>
+
+</head>
+<body class="skin-blue">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="@Url.Action("Index","Home")" class="logo">
+
+                <span class="logo-mini"><b>S</b>A</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg">Student App </span>
+            </a>
+            <partial name="~/Views/Shared/_NavBar.cshtml" />
+        </header>
+
+        <!-- Left side column. contains the logo and sidebar -->
+        <partial name="~/Views/Shared/_LeftColumn.cshtml" />
+        <!-- Right side column. Contains the navbar and content of the page -->
+        <div class="content-wrapper">
+            <section class="content-header">
+                @await RenderSectionAsync("featured", required: false)
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                @RenderBody()
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.right-side -->
+
+
+        <footer></footer>
+    </div>
+
+
+
+   @*  <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Students.WebApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Students.WebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer> *@
+
+    <script src="~/lib/jquery-2.2.3.min.js"></script>
+    <script src="~/lib/jquery-3.1.1.min.js"></script>
+    <script src="~/lib/bootstrap.min.js"></script>
+    <script src="~/lib/AdminLTE/app.js"></script>
+    <script src="~/lib/custom/globalize.js"></script>
+    <script src="~/lib/custom/globalize.culture.es-AR.js"></script>
+    <script src="~/lib/growl/bootstrap-growl.js"></script>
+    <script src="~/lib/growl/bootstrap-notify.js"></script>
+    <script src="~/lib/custom/common.js" asp-append-version="true"></script>
+    <script src="~/lib/custom/evenifhidden.js"></script>
+    <script src="~/lib/jquery.blockUI.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script type="text/javascript">
+        $(function () {
+            $(".content-wrapper").css("min-height", ($(document).height()));
+        });
+    </script>
+
+</body>
+</html>
