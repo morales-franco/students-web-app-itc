@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Students.WebApp/.vs/Students.WebApp/FileContentIndex
+/Students.WebApp/Students.WebApp/obj
