@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>App</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" 
+
+    <link rel="stylesheet" href="~/css/datatables/dataTables.bootstrap.css" />
+    <link rel="stylesheet" href="~/css/font-awesome.css" />
+    <link rel="stylesheet" href="~/css/ionicons.css" />
+    <link rel="stylesheet" href="~/css/AdminLTE/AdminLTE.css" />
+    <link rel="stylesheet" href="~/css/AdminLTE/skins/_all-skins.css" />
+    <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true" />
+</head>
+@await RenderSectionAsync("Scripts", required: false)
+
+<script type="text/javascript">
+    $(function () {
+        $(".content-wrapper").css("min-height", ($(document).height()));
+    });
+</script>
+<body class="login-page">
+    @RenderBody()
+    <footer></footer>
+
+    <script src="~/lib/jquery-2.2.3.min.js"></script>
+    <script src="~/lib/jquery-3.1.1.min.js"></script>
+    <script src="~/lib/bootstrap.min.js"></script>
+    <script src="~/lib/AdminLTE/app.js"></script>
+    <script src="~/lib/custom/globalize.js"></script>
+    <script src="~/lib/custom/globalize.culture.es-AR.js"></script>
+    <script src="~/lib/growl/bootstrap-growl.js"></script>
+    <script src="~/lib/growl/bootstrap-notify.js"></script>
+    <script src="~/lib/custom/common.js" asp-append-version="true"></script>
+    <script src="~/lib/custom/evenifhidden.js"></script>
+    <script src="~/lib/jquery.blockUI.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script type="text/javascript">
+        $(function () {
+            $(".content-wrapper").css("min-height", ($(document).height()));
+        });
+    </script>
+</body>
+
+</html>
+
