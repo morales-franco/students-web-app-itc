@@ -1,7 +1,6 @@
-﻿using Students.WebApp.Features.Students.Dtos;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Students.WebApp.Features.Students.ViewModels
+namespace Students.WebApp.ViewModels.Student
 {
     public record StudentUpdateModel
     {
@@ -19,7 +18,7 @@ namespace Students.WebApp.Features.Students.ViewModels
         [DataType(DataType.Date)]
         public DateTime FechaNacimiento { get; set; }
 
-        public static explicit operator StudentUpdateDto(StudentUpdateModel model) =>
-            new StudentUpdateDto(model.Id, model.Nombre, model.Apellido, model.FechaNacimiento);
+        //public static explicit operator StudentUpdateRequest(StudentUpdateModel model) =>
+        //    new StudentUpdateRequest(model.Id, model.Nombre, model.Apellido, model.FechaNacimiento);
     }
 }

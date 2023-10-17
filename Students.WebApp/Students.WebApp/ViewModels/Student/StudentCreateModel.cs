@@ -1,7 +1,6 @@
-﻿using Students.WebApp.Features.Students.Dtos;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Students.WebApp.Features.Students.ViewModels
+namespace Students.WebApp.ViewModels.Student
 {
     public record StudentCreateModel
     {
@@ -17,7 +16,7 @@ namespace Students.WebApp.Features.Students.ViewModels
         [DataType(DataType.Date)]
         public DateTime FechaNacimiento { get; set; }
 
-        public static explicit operator StudentCreateDto(StudentCreateModel model) =>
-            new StudentCreateDto(model.Nombre, model.Apellido, model.FechaNacimiento);
+        //public static explicit operator StudentCreateRequest(StudentCreateModel model) =>
+        //    new StudentCreateRequest(model.Nombre, model.Apellido, model.FechaNacimiento);
     }
 }

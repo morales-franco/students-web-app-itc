@@ -1,0 +1,89 @@
+﻿@model Students.WebApp.ViewModels.Student.StudentIndexModel
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header with-border">
+                <h3 class="box-title">Bordered Table</h3>
+            </div>
+
+            <div class="box-body">
+                <table class="table table-bordered" id="table-grid">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            // var table = new DataTable('#table-grid', {
+            //     ajax: {
+            //         url: "@Url.Action("GetPageAsync", "Student")",
+            //         type: 'GET'
+            //     },
+            //     columns: [
+            //         { data: 'id' },
+            //         { data: 'nombre' },
+            //         { data: 'apellido' },
+            //     ],
+            //     processing: true,
+            //     serverSide: true
+            // });
+
+            $('#table-grid').DataTable({
+                "processing": true, // for show progress bar
+                "serverSide": true, // for process server side
+                "filter": false, // this is for disable filter (search box)
+                "orderMulti": false, // for disable multiple column at once
+                "ajax": {
+                    "url": "@Url.Action("LoadGrid", "Student")",
+                    "type": "POST",
+                    "datatype": "json"
+                },
+                "ordering": false,
+                "columnDefs":
+                    [{
+                        "targets": [0],
+                        "visible": false,
+                        "searchable": false
+                    }],
+                "columns": [
+                    { "data": "id", "name": "Id", "autoWidth": true },
+                    { "data": "nombre", "name": "Nombre", "autoWidth": true },
+                    { "data": "apellido", "name": "Apellido", "autoWidth": true },
+                    {
+                        "render": function (data, type, full, meta) { return '<a class="btn btn-info" href="/DemoGrid/Edit/' + full.Id + '">Edit</a>'; }
+                    },
+                    {
+                        data: null, render: function (data, type, row) {
+                            return "<a href='#' class='btn btn-danger' onclick=DeleteData('" + row.Id + "'); >Delete</a>";
+                        }
+                    },
+                ]
+
+            });
+        });
+    </script>
+
+}

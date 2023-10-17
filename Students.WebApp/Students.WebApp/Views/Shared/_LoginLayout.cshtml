@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>App</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" 
+    <title>@ViewData["Title"] - Students.WebApp</title>
 
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/datatables/dataTables.bootstrap.css" />
     <link rel="stylesheet" href="~/css/font-awesome.css" />
     <link rel="stylesheet" href="~/css/ionicons.css" />
@@ -13,13 +14,7 @@
     <link rel="stylesheet" href="~/css/AdminLTE/skins/_all-skins.css" />
     <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true" />
 </head>
-@await RenderSectionAsync("Scripts", required: false)
 
-<script type="text/javascript">
-    $(function () {
-        $(".content-wrapper").css("min-height", ($(document).height()));
-    });
-</script>
 <body class="login-page">
     @RenderBody()
     <footer></footer>
